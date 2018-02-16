@@ -4,6 +4,7 @@
 /vsoms/dist/
 /vsoms/build/
 /vsoms/nbproject/private/
+/vsoms/.dep.inc
 /basic-test/build/
 /basic-test/dist/
 /basic-test/nbproject/private/
