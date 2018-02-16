@@ -1,0 +1,9 @@
+/libvsoms/build/
+/libvsoms/dist/
+/libvsoms/nbproject/private/
+/vsoms/dist/
+/vsoms/build/
+/vsoms/nbproject/private/
+/basic-test/build/
+/basic-test/dist/
+/basic-test/nbproject/private/
