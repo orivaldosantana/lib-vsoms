@@ -11,7 +11,8 @@
  * Created on 16 de Fevereiro de 2018, 5:41
  */
 
-#include <cstdlib>
+
+#include "Test.h"
 
 using namespace std;
 
@@ -19,7 +20,12 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
+    Test test;
 
+    //test.somTsp();
+    //test.convertDataFile(); 
+    test.somTspMestro1(); 
+    
     return 0;
 }
 

@@ -4,6 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>NodoTsp.h</itemPath>
+      <itemPath>SomTsp.h</itemPath>
+      <itemPath>Test.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +15,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>NodoTsp.cpp</itemPath>
+      <itemPath>SomTsp.cpp</itemPath>
+      <itemPath>Test.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -30,12 +36,45 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>GNU|GNU</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../src</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../vsoms"
+                            CT="3"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../vsoms"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvsoms.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
+      <item path="NodoTsp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NodoTsp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SomTsp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SomTsp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Test.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -59,6 +98,18 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="NodoTsp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NodoTsp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SomTsp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SomTsp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Test.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>

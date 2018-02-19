@@ -35,6 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/NodoTsp.o \
+	${OBJECTDIR}/SomTsp.o \
+	${OBJECTDIR}/Test.o \
 	${OBJECTDIR}/main.o
 
 
@@ -52,23 +55,41 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=../vsoms/dist/Debug/GNU-Linux/libvsoms.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/somltsp
 
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/somltsp: ../vsoms/dist/Debug/GNU-Linux/libvsoms.a
+
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/somltsp: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/somltsp ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/NodoTsp.o: NodoTsp.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/NodoTsp.o NodoTsp.cpp
+
+${OBJECTDIR}/SomTsp.o: SomTsp.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SomTsp.o SomTsp.cpp
+
+${OBJECTDIR}/Test.o: Test.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Test.o Test.cpp
+
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
+	cd ../vsoms && ${MAKE}  -f Makefile CONF=Debug
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -76,6 +97,7 @@ ${OBJECTDIR}/main.o: main.cpp
 
 # Subprojects
 .clean-subprojects:
+	cd ../vsoms && ${MAKE}  -f Makefile CONF=Debug clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

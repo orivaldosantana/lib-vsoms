@@ -58,6 +58,7 @@ public:
     Nodo*                findBestNeuron          (Sample*                    s);   
     void                 saveGraph               (std::string fileName = "graph_nn_temp.dot");
     void                 savePdfGraph            (std::string fileName);
+    void                 saveTxtNodos            (std::string fileName);
     int                  getMaxEpoch             ( ) const;    
     void                 setMaxSize              (int maxSize);    
     void                 setMaxEpoch             (int maxEpoch);

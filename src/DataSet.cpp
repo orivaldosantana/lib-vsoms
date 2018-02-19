@@ -195,6 +195,33 @@ void DataSet::saveToFile(std::string fileName, bool randomize, bool normalize) {
     }
     file.close();
 }
+/**
+ * Grava as coluna selecionadas em um novo arquivo de dados 
+ * @param fileName no do arquivo de saída 
+ * @param colBegin coluna inicial 
+ * @param colEnd coluna final 
+ */
+void DataSet::savePartToFile(std::string fileName, int colBegin, int colEnd) {
+    std::vector<double> lineMatrix;
+    Sample* s;
+    if (empty)
+        return;
+    ofstream file(fileName.c_str());
+ 
+    file << matrix.size() << " " << (colEnd - colBegin + 1) << std::endl;
+    // escrita dos dados em arquivo
+    for (int i = 0; i < matrix.size(); i++) {
+        if (sampleSize != 0) {
+            s = getSample(i);
+            s->getFeatures(lineMatrix);
+            for (int j = colBegin; j <= colEnd; j++) {
+                file << lineMatrix[j] << " ";
+            }
+        }
+        file << std::endl;
+    }
+    file.close();
+}
 
 
 

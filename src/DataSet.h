@@ -38,7 +38,9 @@ public:
                                                  bool      normalize = false);
     void            saveToFileOctaveFormat      (std::string        fileName,
                                                  unsigned int       rows = 0);
-    void            savePartToFile              (std::string        fileName);
+    void            savePartToFile              (std::string fileName,
+                                                 int colBegin, 
+                                                 int colEnd);  
     void            show                        ( );
     void            randomizeIndex              ( );
     //void            resetRandomSampleIndex      ( );

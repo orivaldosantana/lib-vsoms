@@ -107,6 +107,22 @@ void BasicNeuralNetwork::printNodos(){
     std::cout << std::endl; 
 }
 
+void BasicNeuralNetwork::saveTxtNodos(std::string fileName ){
+    std::string fullName = "/tmp/"+fileName+Utils::int2string(epoch)+ ".txt"; 
+    std::ofstream file(fullName.c_str());
+    
+    file << nodos->size(); 
+    if ( nodos->size() > 0 ) 
+        file << " " << (*nodos)[0]->getSize() << std::endl; 
+    else 
+        file << " 0" << std::endl; 
+    for (std::vector<Nodo*>::iterator itN = nodos->begin(); itN < nodos->end(); itN++) {
+        file << (*itN)->toString() << std::endl; 
+    }
+    file.close();  
+    
+}
+
 void BasicNeuralNetwork::printNeighbors(){
     std::cout << "Neighbor Lists: " << std::endl;
     for (std::vector<Nodo*>::iterator itN = nodos->begin(); itN < nodos->end(); itN++) {
@@ -142,6 +158,7 @@ void BasicNeuralNetwork::saveGraph(std::string fileName ){
         itW++;
     }
     file << " } " << std::endl;
+    file.close(); 
 }
 
 void BasicNeuralNetwork::savePdfGraph(std::string fileName){
