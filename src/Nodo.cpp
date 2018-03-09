@@ -14,6 +14,15 @@ Nodo::Nodo(){
     neighbors = new std::list<Nodo*>;
 }
 
+Nodo::Nodo(nlohmann::json& jsonFile){
+    jsonInformationToVectorInformation(jsonFile["information"]); 
+    label = jsonFile["label"];
+    description = jsonFile["description"]; 
+    inserted = false; 
+    winner = false; 
+    
+} 
+
 Nodo::Nodo(const Nodo& orig) {
 
 }
@@ -23,6 +32,7 @@ Nodo::Nodo(const Sample& s, std::string l, std::string d) {
     label = l;
     description = d;
     neighbors = new std::list<Nodo*>;
+    inserted = false; 
 }
 
 Nodo::~Nodo() {
@@ -99,6 +109,16 @@ void Nodo::setFeatures(Sample* s) {
     information = s->information;
 }
 
+nlohmann::json Nodo::toJson(){
+    nlohmann::json node; 
+    
+    node["information"] = information; 
+    node["label"] = label; 
+    node["description"] = description; 
+    
+    return node; 
+} 
+
 bool Nodo::isInserted() {
     return inserted;
 }
@@ -170,5 +190,15 @@ void Nodo::updateFeatures(double d, Sample* s) {
         *it += d * (*itS - *it);
         itS++;
     }
+}
+
+void  Nodo::jsonInformationToVectorInformation(nlohmann::json& jsonFile){
+    
+    for (nlohmann::json::iterator itJ =  jsonFile.begin() ; itJ !=jsonFile.end(); itJ++){
+        double number = (*itJ);
+       information.push_back(number);
+    }
+    
+    
 }
 

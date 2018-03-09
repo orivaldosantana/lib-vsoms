@@ -29,6 +29,9 @@ public:
     void                setEnabled                  (bool              e); 
     void                setMarkedToUpdate           (bool             up);
     void                printStatus                 ( ); 
+    // Métodos para exportar JSON
+    
+    
     
     
 private:

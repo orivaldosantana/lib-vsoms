@@ -70,22 +70,22 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/somltsp: ${OBJECTFILES}
 ${OBJECTDIR}/NodoTsp.o: NodoTsp.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/NodoTsp.o NodoTsp.cpp
+	$(COMPILE.cc) -g -I../src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/NodoTsp.o NodoTsp.cpp
 
 ${OBJECTDIR}/SomTsp.o: SomTsp.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SomTsp.o SomTsp.cpp
+	$(COMPILE.cc) -g -I../src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SomTsp.o SomTsp.cpp
 
 ${OBJECTDIR}/Test.o: Test.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Test.o Test.cpp
+	$(COMPILE.cc) -g -I../src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Test.o Test.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

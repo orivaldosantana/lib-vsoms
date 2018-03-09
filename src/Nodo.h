@@ -13,13 +13,16 @@
 #include "Sample.h"
 #include <list>
 
+#include "json.hpp"
+
 class Weight;
 
 class Nodo: public Sample  {
      
 public:
     
-    Nodo                ( ); 
+    Nodo                ( );
+    Nodo                (nlohmann::json& jsonFile); 
     Nodo                (const Nodo&               orig);
     Nodo                (const Sample                &s,
                          std::string           l = "n ",
@@ -46,7 +49,9 @@ public:
     void                removeNeighbor              (Nodo*                   n);
     void                updateFeatures              (double                  d,
                                                      Sample*                 s);
-    
+    // métodos para exportar para JSON 
+    nlohmann::json toJson(); 
+    void  jsonInformationToVectorInformation(nlohmann::json& jsonFile);
      
 
 protected:
@@ -55,6 +60,7 @@ protected:
     std::string                 label;
     std::string                 description;
     bool                        inserted;
+    bool                        winner; 
 };
 
 #endif	/* NODO_H */
