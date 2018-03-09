@@ -10,7 +10,13 @@
 BasicNeuralNetwork::BasicNeuralNetwork() {
     edges = new std::list<Edge*>;
     nodos = new std::vector<Nodo*>;
-    nodeDrawRadius = 0.012; 
+    epoch = 0; 
+    nodeCount = 0; 
+    maxEpoch = MAXINT; 
+    maxSize = MAXINT; 
+    currentIt = MAXINT; 
+    
+    
 }
 
 BasicNeuralNetwork::BasicNeuralNetwork(const BasicNeuralNetwork& orig) {
@@ -65,7 +71,7 @@ int BasicNeuralNetwork::getAmountNeurons() {
 }
 
 int BasicNeuralNetwork::getNodeCount() {
-    return nodeCount;
+    return nodeCount.count;
 }
 
 void BasicNeuralNetwork::loadDataSet(std::string fileName){
@@ -206,6 +212,14 @@ void BasicNeuralNetwork::toJson(std::string fileName) {
     getNodesJson(jsonFile);
     getEdgesJson(jsonFile);   
 
+    jsonFile["properties"]["nodeCount"] = nodeCount.count;  
+    jsonFile["properties"]["epoch"] = epoch; 
+    jsonFile["properties"]["maxEpoch"] = maxEpoch; 
+    jsonFile["properties"]["maxSize"] = maxSize; 
+    jsonFile["properties"]["currentIt"] = currentIt; 
+
+    
+    
     saveJson(jsonFile, fileName);
 
 }

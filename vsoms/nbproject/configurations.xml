@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>../src/BasicNeuralNetwork.h</itemPath>
       <itemPath>../src/Conexion.h</itemPath>
+      <itemPath>../src/Counter.h</itemPath>
       <itemPath>../src/DataSet.h</itemPath>
       <itemPath>../src/Edge.h</itemPath>
       <itemPath>../src/Nodo.h</itemPath>
@@ -23,6 +24,7 @@
                    projectFiles="true">
       <itemPath>../src/BasicNeuralNetwork.cpp</itemPath>
       <itemPath>../src/Conexion.cpp</itemPath>
+      <itemPath>../src/Counter.cpp</itemPath>
       <itemPath>../src/DataSet.cpp</itemPath>
       <itemPath>../src/Edge.cpp</itemPath>
       <itemPath>../src/Nodo.cpp</itemPath>
@@ -66,6 +68,10 @@
       <item path="../src/Conexion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../src/Conexion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/Counter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/Counter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../src/DataSet.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -121,6 +127,10 @@
       <item path="../src/Conexion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../src/Conexion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/Counter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/Counter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../src/DataSet.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -11,11 +11,13 @@
 #include "Nodo.h"
 #include "DataSet.h"
 
+#include "Counter.h"
+
 class BasicNeuralNetwork {
 protected:
     std::vector<Nodo*>*   nodos; //!< Nodos 
     std::list<Edge*>*     edges; //!< Pesos 
-    int                   nodeCount; //!< Contador de nodos adicionados na rede 
+    Counter               nodeCount; //!< Contador de nodos adicionados na rede 
     DataSet               dataSet; //!< Dados de treinamento 
     int                   epoch;  //!< Uma apresentação completa de todas as amostras da base de dados 
     int                   maxEpoch; //!< Número máximo de épocas de treinamento 

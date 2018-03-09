@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/_ext/511e4115/BasicNeuralNetwork.o \
 	${OBJECTDIR}/_ext/511e4115/Conexion.o \
+	${OBJECTDIR}/_ext/511e4115/Counter.o \
 	${OBJECTDIR}/_ext/511e4115/DataSet.o \
 	${OBJECTDIR}/_ext/511e4115/Edge.o \
 	${OBJECTDIR}/_ext/511e4115/Nodo.o \
@@ -79,6 +80,11 @@ ${OBJECTDIR}/_ext/511e4115/Conexion.o: ../src/Conexion.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Conexion.o ../src/Conexion.cpp
+
+${OBJECTDIR}/_ext/511e4115/Counter.o: ../src/Counter.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Counter.o ../src/Counter.cpp
 
 ${OBJECTDIR}/_ext/511e4115/DataSet.o: ../src/DataSet.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
