@@ -9,13 +9,13 @@
 #define	NODO_H
 
 #include <iostream> 
-#include "Weight.h"
+#include "Edge.h"
 #include "Sample.h"
 #include <list>
 
 #include "json.hpp"
 
-class Weight;
+class Edge;
 
 class Nodo: public Sample  {
      
@@ -29,11 +29,11 @@ public:
                          std::string           d = "d "); 
     virtual ~Nodo();
     void                addNeighbor                 (Nodo*                   n);
-    void                addWeight                   (Weight*                iw);
+    void                addEdge                   (Edge*                iw);
     void                clear                       ( );
     bool                isInserted                  ( );
     bool                isNeighbor                  (Nodo*                   n);  
-    Weight*             getCommomWeight             (Nodo*                   n); 
+    Edge*             getCommomEdge             (Nodo*                   n); 
     std::string         getLabel                    ( ); 
     double              getFeature                  (int                     i);        
     std::list<Nodo*>*   getNeighbors                ( );
@@ -45,7 +45,7 @@ public:
     void                setFeature                  (double f, int i); 
 
     //std::string         toString                    ( );
-    void                removeWeight                (Weight*                 w);
+    void                removeEdge                (Edge*                 w);
     void                removeNeighbor              (Nodo*                   n);
     void                updateFeatures              (double                  d,
                                                      Sample*                 s);
@@ -55,7 +55,7 @@ public:
      
 
 protected:
-    std::list<Weight*>          weights;
+    std::list<Edge*>            edges;
     std::list<Nodo*>           *neighbors;
     std::string                 label;
     std::string                 description;

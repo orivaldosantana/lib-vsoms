@@ -47,11 +47,11 @@ void SimpleNN::executeOneIt() {
     addNeuron(e, s);
 
     /***************Adicionando conexões ***************/
-    addWeight(a,b);
-    addWeight(c,b);
-    addWeight(c,d);
-    addWeight(d,e);
-    addWeight(e,a);
+    addEdge(a,b);
+    addEdge(c,b);
+    addEdge(c,d);
+    addEdge(d,e);
+    addEdge(e,a);
 
     /*****Gerando o pdf do com o grafo da rede**********/
     savePdfGraph("../output/simple_nn_test");
@@ -61,7 +61,7 @@ void SimpleNN::executeOneIt() {
     printNodos(); 
 
     /*************** Excluindo uma conexão *************/
-    removeWeight(c,d); 
+    removeEdge(c,d); 
     savePdfGraph("../output/simple_nn_test_removed_conexion_c_d");
     printConections();
     printNodos(); 

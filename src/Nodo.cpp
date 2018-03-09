@@ -43,24 +43,24 @@ void Nodo::addNeighbor(Nodo* n) {
     neighbors->push_back(n);
 }
 
-void Nodo::addWeight(Weight* iw) {
-    weights.push_back(iw);
+void Nodo::addEdge(Edge* iw) {
+    edges.push_back(iw);
 }
 
 void Nodo::clear() {
-    std::list<Weight*>::iterator itW;
-    itW = weights.begin();
-    while (itW != weights.end()) {
+    std::list<Edge*>::iterator itW;
+    itW = edges.begin();
+    while (itW != edges.end()) {
         delete (*itW);
         itW++;
     }
-    weights.clear();
+    edges.clear();
 }
 
-Weight* Nodo::getCommomWeight(Nodo* n){
-   std::list<Weight*>::iterator itW;
-   itW = weights.begin();
-   while (itW != weights.end())
+Edge* Nodo::getCommomEdge(Nodo* n){
+   std::list<Edge*>::iterator itW;
+   itW = edges.begin();
+   while (itW != edges.end())
    {
       if  ((*itW)->getAheadNeuron() == n)  {
          return *itW;
@@ -125,9 +125,9 @@ bool Nodo::isInserted() {
 
 bool Nodo::isNeighbor(Nodo* n) {
     bool b = false;
-    std::list<Weight*>::iterator itW;
-    itW = weights.begin();
-    while (itW != weights.end()) {
+    std::list<Edge*>::iterator itW;
+    itW = edges.begin();
+    while (itW != edges.end()) {
         if ((*itW)->getAheadNeuron() == n) {
             b = true;
             break;
@@ -141,10 +141,10 @@ bool Nodo::isNeighbor(Nodo* n) {
 }
 
 void Nodo::print() {
-    std::list<Weight*>::iterator itW;
-    itW = weights.begin();
+    std::list<Edge*>::iterator itW;
+    itW = edges.begin();
     std::cout << label << " : ";
-    while (itW != weights.end()) {
+    while (itW != edges.end()) {
         std::cout << (*itW)->getAheadNeuron()->getLabel() << " - " << (*itW)->getBackNeuron()->getLabel() << ", ";
         itW++;
     }
@@ -178,9 +178,9 @@ void Nodo::removeNeighbor(Nodo* n) {
 }
 
 
-//Cuidado ao chamar este método pois  Weight faz referência a outro neurônio 
-void Nodo::removeWeight(Weight* w) {
-    weights.remove(w);
+//Cuidado ao chamar este método pois  Edge faz referência a outro neurônio 
+void Nodo::removeEdge(Edge* w) {
+    edges.remove(w);
 }
 
 void Nodo::updateFeatures(double d, Sample* s) {

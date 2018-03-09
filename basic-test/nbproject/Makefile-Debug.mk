@@ -69,17 +69,17 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/basic-test: ${OBJECTFILES}
 ${OBJECTDIR}/SimpleNN.o: SimpleNN.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SimpleNN.o SimpleNN.cpp
+	$(COMPILE.cc) -g -I../src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SimpleNN.o SimpleNN.cpp
 
 ${OBJECTDIR}/Test.o: Test.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Test.o Test.cpp
+	$(COMPILE.cc) -g -I../src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Test.o Test.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
