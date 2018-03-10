@@ -9,7 +9,7 @@
 
 SomTsp::SomTsp() {
     maxEpoch = 150; 
-    maxSize = 50;  
+    maxSize = 120;  
     sigma = 4;
     epoch = 1;
     tempListNN = new std::list<Nodo*>; 
@@ -42,15 +42,15 @@ void SomTsp::initialize(std::string fileData){
 void SomTsp::initialize(DataSet &dt) {
 
     std::vector<double>  info; 
-    info.push_back(-1);
-    info.push_back(0);
+    info.push_back(-0.3);
+    info.push_back(0.2);
     
     Sample* s = new Sample(info);
     NodoTsp* a = new NodoTsp(*s, "1");
     addNeuron(a, s);
 
-    info[0] = 1;
-    info[1] = 0;
+    info[0] = 0;
+    info[1] = 0.2;
     s = new Sample(info);
     NodoTsp* b = new NodoTsp(*s, "2");
     addNeuron(b, s);
@@ -175,7 +175,7 @@ void SomTsp::executeOneIt() {
         //Else no new node is inserted, update the weights vector of the 
         //winner node and his neighbors 
         }else {
-            double delta = 0.70711;
+            double delta = 0.1; //0.70711;
             bestN->updateFeatures(delta, currentSample);
             bestN->setMarkedToUpdate(true);
             //int neighborOrder = 0;
