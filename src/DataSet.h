@@ -26,11 +26,13 @@ public:
     //void            getRandomSample             (Sample &s);
     bool            getRandomSample             (Sample* &s); 
     Sample*         getRandomSample             ( ); 
+    Sample*         getSample             ( );
     Sample*         getSample                   (unsigned int i);
-    Sample*         getSample                   ();
-    int             getSize                     ( ); 
+    int             getSize                     ( );
+    int             getSampleSize               ( );
     bool            isEmpty                     ( );
     void            loadDataFromFile            (std::string fileName);
+    void            loadDataFromCsvFile         (std::string fileName);
     void            normalizeData               ( );
     void            putNoise                    (float                 sigma, 
                                                  unsigned int    repetitions);
@@ -39,9 +41,7 @@ public:
                                                  bool      normalize = false);
     void            saveToFileOctaveFormat      (std::string        fileName,
                                                  unsigned int       rows = 0);
-    void            savePartToFile              (std::string fileName,
-                                                 int colBegin, 
-                                                 int colEnd);  
+    void            savePartToFile              (std::string        fileName);
     void            show                        ( );
     void            randomizeIndex              ( );
     //void            resetRandomSampleIndex      ( );

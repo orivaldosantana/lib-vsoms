@@ -24,6 +24,7 @@ class Sample {
     friend class NodoTsp;
     friend class SomStg2Node; 
     friend class NodeSomCstg; 
+    friend class NodeGwr; 
 public:
     Sample(); 
     Sample(int s);

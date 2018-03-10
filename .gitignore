@@ -13,5 +13,7 @@
 /somltsp/dist/
 /somltsp/nbproject/private/
 /somltsp/.dep.inc
-
-
+/gwr/dist/
+/gwr/build/
+/gwr/nbproject/private/
+/gwr/.dep.inc

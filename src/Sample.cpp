@@ -65,6 +65,8 @@ double Sample::distance(Sample& sIn){
    return sqrt(sum);
 }
 
+
+
 double Sample::partialDistance(Sample& sIn, Range& r) {
    double sum = 0;
    int ib = r.begin;

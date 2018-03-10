@@ -7,7 +7,7 @@
 
 #include "DataSet.h"
 
- int DataSet::srandInc = 0; 
+int DataSet::srandInc = 0;
 
 DataSet::DataSet() {
     sampleI = 0;
@@ -16,19 +16,19 @@ DataSet::DataSet() {
 
 }
 
-DataSet::DataSet(std::string fn){
-    sampleI = 0; 
-    loadDataFromFile(fn); 
+DataSet::DataSet(std::string fn) {
+    sampleI = 0;
+    loadDataFromFile(fn);
 }
 
 DataSet::DataSet(const DataSet& orig) {
-    
+
 }
 
 void DataSet::generateRandomIndex() {
-    
+
     //std::cout << endl << "----------------" << DataSet::srandInc <<"----------" << endl << time(NULL) + DataSet::srandInc << endl; 
-    srand(unsigned ( time(NULL) + DataSet::srandInc ));
+    srand(unsigned ( time(NULL) + DataSet::srandInc));
     index.clear();
     unsigned int tss = index.size();
     for (unsigned int i = 0; i < matrix.size(); i++)
@@ -42,11 +42,11 @@ void DataSet::generateRandomIndex() {
  * @param s uma amostra
  * @return verdadeiro se a amostra é a primeira, falso para as outras
  */
- bool DataSet::getRandomSample(Sample* &s) {
+bool DataSet::getRandomSample(Sample* &s) {
     s = getRandomSample();
     if (sampleI == 0)
-        return true; 
-    return false; 
+        return true;
+    return false;
 }
 
 Sample* DataSet::getRandomSample() {
@@ -69,36 +69,40 @@ Sample* DataSet::getSample(unsigned int i) {
     return matrix[i];
 }
 
-int DataSet::getSize(){
-    matrix.size(); 
+int DataSet::getSize() {
+    matrix.size();
 }
 
-bool DataSet::isEmpty(){
-    return empty; 
+int DataSet::getSampleSize() {
+    return sampleSize;
+}
+
+bool DataSet::isEmpty() {
+    return empty;
 }
 
 void DataSet::loadDataFromFile(std::string fileName) {
-    matrix.clear(); 
+    matrix.clear();
     std::ifstream file;
     std::vector<double> lineMatrix;
     file.open(fileName.c_str());
     if (!file.good()) {
         std::cout << " File, " << fileName << ", not found! " << std::endl;
-        empty = true; 
         return;
     }
     float columns, lines, data;
     file >> lines >> columns;
+
     for (int i = 0; i < lines; i++) {
         if (file.good()) {
             for (int j = 0; j < columns; j++) {
                 file >> data;
                 lineMatrix.push_back(data);
             }
-           // Sample s(lineMatrix);
+            // Sample s(lineMatrix);
 
             matrix.push_back(new Sample(lineMatrix));
-            lineMatrix.clear(); 
+            lineMatrix.clear();
         }
     }
     empty = false;
@@ -106,7 +110,54 @@ void DataSet::loadDataFromFile(std::string fileName) {
     //matrix.pop_back();
     dataSetSize = matrix.size();
     //originalDatabaseSize = matrix.size();
-    generateRandomIndex(); 
+    generateRandomIndex();
+}
+
+void DataSet::loadDataFromCsvFile(std::string fileName) {
+    matrix.clear();
+    std::ifstream file;
+    std::string aux;
+    std::string cell;
+    std::vector<double> lineMatrix;
+    file.open(fileName.c_str());
+    double data;
+    if (!file.good()) {
+        std::cout << " File, " << fileName << ", not found! " << std::endl;
+        return;
+    }
+
+    std::getline(file, aux); // pula primeira linha  
+    std::stringstream lineStreamFeatures(aux); //capiturando linha
+   // std::cout << aux << std::endl;
+
+    int nHeaders = 0; // numeros de caracteristicas
+    while (std::getline(lineStreamFeatures, cell, ',')) {
+        nHeaders++;
+    }
+    //std::cout << "headers: " << nHeaders << std::endl;
+   
+    while (getline(file, aux)) {
+        std::stringstream lineStream(aux);
+        while (getline(lineStream, cell, ',')) {
+            data = std::stod(cell);
+            lineMatrix.push_back(data);
+            
+        }
+        
+        matrix.push_back(new Sample(lineMatrix));
+        lineMatrix.clear();
+    }
+  
+    
+    empty = false;
+    sampleSize = matrix[0]->getSize() ;
+    //cout << sampleSize << endl;
+    //matrix.pop_back();
+    dataSetSize = matrix.size();
+    //originalDatabaseSize = matrix.size();
+    generateRandomIndex();
+
+
 }
 
 void DataSet::normalizeData() {
@@ -135,7 +186,7 @@ void DataSet::normalizeData() {
         std::cout << minValues.at(j) << " ";
     }
     std::cout << std::endl;
-    std::cout  << " - - - max: ";
+    std::cout << " - - - max: ";
     for (int j = 0; j < sampleSize; j++) {
         std::cout << maxValues.at(j) << " ";
     }
@@ -147,7 +198,7 @@ void DataSet::normalizeData() {
         for (int j = 0; j < sampleSize; j++) {
             double newValue = (lineMatrix.at(j) - minValues[j]) / (maxValues[j] - minValues[j]);
             lineMatrix.at(j) = newValue;
-            s->setFeatures(lineMatrix); 
+            s->setFeatures(lineMatrix);
         }
     }
 }
@@ -161,7 +212,7 @@ void DataSet::putNoise(float sigma, unsigned int repetitions) {
         Sample* originalSample = matrix.at(pos);
         std::vector<double> info;
         originalSample->getFeatures(info);
-        Sample* noiseSample= new Sample(info);
+        Sample* noiseSample = new Sample(info);
         noiseSample->putNormalNoise(sigma);
         matrixTemp.push_back(noiseSample);
     }
@@ -172,8 +223,6 @@ void DataSet::putNoise(float sigma, unsigned int repetitions) {
 void DataSet::randomizeIndex() {
     std::random_shuffle(index.begin(), index.end());
 }
-
-
 
 void DataSet::saveToFile(std::string fileName, bool randomize, bool normalize) {
     std::vector<double> lineMatrix;
@@ -202,39 +251,8 @@ void DataSet::saveToFile(std::string fileName, bool randomize, bool normalize) {
     }
     file.close();
 }
-/**
- * Grava as coluna selecionadas em um novo arquivo de dados 
- * @param fileName no do arquivo de saída 
- * @param colBegin coluna inicial 
- * @param colEnd coluna final 
- */
-void DataSet::savePartToFile(std::string fileName, int colBegin, int colEnd) {
-    std::vector<double> lineMatrix;
-    Sample* s;
-    if (empty)
-        return;
-    ofstream file(fileName.c_str());
- 
-    file << matrix.size() << " " << (colEnd - colBegin + 1) << std::endl;
-    // escrita dos dados em arquivo
-    for (int i = 0; i < matrix.size(); i++) {
-        if (sampleSize != 0) {
-            s = getSample(i);
-            s->getFeatures(lineMatrix);
-            for (int j = colBegin; j <= colEnd; j++) {
-                file << lineMatrix[j] << " ";
-            }
-        }
-        file << std::endl;
-    }
-    file.close();
-}
-
-
 
 void DataSet::saveToFileOctaveFormat(std::string fileName, unsigned int rows) {
-    if (empty)
-        return;
     vector<double> lineMatrix;
     Sample* s;
     ofstream file(fileName.c_str());
@@ -256,7 +274,7 @@ void DataSet::saveToFileOctaveFormat(std::string fileName, unsigned int rows) {
         s->getFeatures(lineMatrix);
         //     file << (i % originalDatabaseSize ) + 1 << " " ;
         for (int j = 0; j < sampleSize; j++) {
-            file <<  lineMatrix[j] << " ";
+            file << lineMatrix[j] << " ";
         }
         file << endl;
         i++;
@@ -265,16 +283,15 @@ void DataSet::saveToFileOctaveFormat(std::string fileName, unsigned int rows) {
     file.close();
 }
 
-
 void DataSet::show() {
     if (empty)
         return;
     // leitura da estrutura de dados que contem o arquivo
-    Sample s(0); 
+    Sample s(0);
     std::cout << " Size of matrix:" << matrix.size() << std::endl;
     for (uint i = 0; i < matrix.size(); i++) {
-        std::cout << "Sample "<< i << ": ";
-        std::cout <<  matrix.at(i)->toString() << std::endl; 
+        std::cout << "Sample " << i << ": ";
+        std::cout << matrix.at(i)->toString() << std::endl;
     }
     std::cout << std::endl;
 }
