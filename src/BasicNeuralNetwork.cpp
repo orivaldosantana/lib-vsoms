@@ -9,7 +9,7 @@
 
 BasicNeuralNetwork::BasicNeuralNetwork() {
     edges = new std::list<Edge*>;
-    nodos = new std::vector<Nodo*>;
+    nodos = new std::list<Nodo*>;
     epoch = 0; 
     nodeCount = 0; 
     maxEpoch = MAXINT; 
@@ -39,6 +39,15 @@ bool BasicNeuralNetwork::addNeuron(Nodo* n, Sample* s) {
     return false;
 }
 
+void BasicNeuralNetwork::addNeuron(Nodo* node) {
+
+    if (!node->isInserted()) {
+        nodos->push_back(node);
+        node->setInserted(true);
+        nodeCount++;
+    }
+}
+
 void BasicNeuralNetwork::addEdge(Nodo* a, Nodo* b) {
     if (!a->isNeighbor(b)) {
         Edge* w = new Edge(0, a, b, "");
@@ -54,7 +63,7 @@ std::list<Edge*>* BasicNeuralNetwork::getEdges() {
     return edges;
 }
 
-std::vector<Nodo*>* BasicNeuralNetwork::getNodes() {
+std::list<Nodo*>* BasicNeuralNetwork::getNodes() {
     return nodos;
 }
 
@@ -87,7 +96,7 @@ Nodo* BasicNeuralNetwork::findBestNeuron(Sample* s) {
     Nodo* bestN = NULL;
     double bestDistance = std::numeric_limits<double>::max();
     // find best neuron
-    for (std::vector<Nodo*>::iterator itN = nodos->begin(); itN < nodos->end(); itN++) {
+    for (auto itN = nodos->begin(); itN != nodos->end(); itN++) {
         double dist = (*itN)->distance(*s);
         if (dist < bestDistance) {
             bestDistance = dist;
@@ -99,15 +108,15 @@ Nodo* BasicNeuralNetwork::findBestNeuron(Sample* s) {
 
 void BasicNeuralNetwork::printConections() {
     std::cout << "Conections: " << std::endl;
-    std::vector<Nodo*>* neurons = getNodes();
-    for (std::vector<Nodo*>::iterator itN = neurons->begin(); itN != neurons->end(); itN++) {
+    std::list<Nodo*>* neurons = getNodes();
+    for (auto itN = neurons->begin(); itN != neurons->end(); itN++) {
         (*itN)->print();
     }
 }
 
 void BasicNeuralNetwork::printNodos(){
     std::cout << "Nodos: " << std::endl;
-    for (std::vector<Nodo*>::iterator itN = nodos->begin(); itN < nodos->end(); itN++) {
+    for (auto itN = nodos->begin(); itN != nodos->end(); itN++) {
         std::cout << (*itN)->getLabel() << ": " << (*itN)->toString() << std::endl; 
     }
     std::cout << std::endl; 
@@ -119,10 +128,10 @@ void BasicNeuralNetwork::saveTxtNodos(std::string fileName ){
     
     file << nodos->size(); 
     if ( nodos->size() > 0 ) 
-        file << " " << (*nodos)[0]->getSize() << std::endl; 
+        file << " " << (*(nodos->begin()))->getSize() << std::endl; 
     else 
         file << " 0" << std::endl; 
-    for (std::vector<Nodo*>::iterator itN = nodos->begin(); itN < nodos->end(); itN++) {
+    for (auto itN = nodos->begin(); itN != nodos->end(); itN++) {
         file << (*itN)->toString() << std::endl; 
     }
     file.close();  
@@ -131,7 +140,7 @@ void BasicNeuralNetwork::saveTxtNodos(std::string fileName ){
 
 void BasicNeuralNetwork::printNeighbors(){
     std::cout << "Neighbor Lists: " << std::endl;
-    for (std::vector<Nodo*>::iterator itN = nodos->begin(); itN < nodos->end(); itN++) {
+    for (auto itN = nodos->begin(); itN != nodos->end(); itN++) {
         (*itN)->printNeigbors(); 
     }
     std::cout << std::endl; 
@@ -221,6 +230,18 @@ void BasicNeuralNetwork::toJson(std::string fileName) {
     
     
     saveJson(jsonFile, fileName);
+
+}
+
+void BasicNeuralNetwork::connectEdge(Nodo* a, Nodo* b, double v, string label) {
+    if (!a->isNeighbor(b)) {
+        Edge* e =  new Edge(v, a, b, label);
+        a->addEdge(e);
+        b->addEdge(e);
+        a->addNeighbor(b);
+        b->addNeighbor(a);
+        edges->push_back(e);
+    }
 
 }
 

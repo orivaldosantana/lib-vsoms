@@ -54,14 +54,7 @@ void Gwr::init() {
 
 }
 
-void Gwr::addNeuron(NodeGwr* node) {
 
-    if (!node->isInserted()) {
-        nodes.push_back(node);
-        node->setInserted(true);
-        currentNode++;
-    }
-}
 
 
 
@@ -122,7 +115,7 @@ void Gwr::execute() {
     if (first->isConnectedWitth(second, edge)) {
         edge->setValue(0);
     } else { // otherwise, set the age of the connection to 0.
-        connectEdge(first, second);
+        connectEdge( dynamic_cast<Nodo*>(first), dynamic_cast<Nodo*>(second),0,"age");
     }
 
     //Calculate the activity of the best matching unit
@@ -134,11 +127,11 @@ void Gwr::execute() {
         //Add the new node, r
         insertNewNode(newNode, first, second);
         //Insert edges between r and s and between r and t
-        connectEdge(newNode, first);
-        connectEdge(newNode, second);
+        connectEdge(dynamic_cast<Nodo*>(newNode), dynamic_cast<Nodo*>(first),0,"age");
+        connectEdge(dynamic_cast<Nodo*>(newNode), dynamic_cast<Nodo*>(second),0,"age");
 
         //Remove the link between s and t
-        removeEdge(first, second);
+        removeEdge(dynamic_cast<Nodo*>(first), dynamic_cast<Nodo*>(second));
     } else { /*If a new node is not added, adapt the positions of the winning node and its neighbours,
            * i, that is the nodes to which it is connected */
         MoveTheWinnerAndTopologicalNeighbors(first, currentSample);
@@ -196,7 +189,7 @@ void Gwr::findTheNearestNodes(NodeGwr*& first, NodeGwr*& second, Sample*& s) {
 
 }
 
-void Gwr::findTheBest(NodeGwr*& bestNode, Sample*& s) {
+void Gwr::findTheBest(NodeGwr*& bestNode, Sample *s) {
     NodeGwr* auxNode;
     auxNode = gerateNodeWithMaxDistance();
 
@@ -204,11 +197,10 @@ void Gwr::findTheBest(NodeGwr*& bestNode, Sample*& s) {
 
 
 
-    for (std::list<NodeGwr*>::iterator itN = nodes.begin(); itN != nodes.end(); itN++) {
-
-
-        if ((*itN)->distance(s) < auxNode->distance(s) and (*itN)->getWinnerStatus() == false) {
-            auxNode = (*itN);
+    for (auto itN = nodos->begin(); itN != nodos->end(); itN++) {
+        NodeGwr* tempN = dynamic_cast<NodeGwr*>(*itN); 
+        if ((*itN)->distance(*s) <   ( dynamic_cast<Nodo*>( auxNode ))->distance(*s) and tempN->getWinnerStatus() == false) {
+            auxNode = tempN;
         }
     }
 
@@ -259,7 +251,7 @@ NodeGwr* Gwr::gerateNodeWithMaxDistance() {
 
 double Gwr::activity(NodeGwr*& bestNode) {
 
-    return exp(-bestNode->distance(currentSample));
+    return exp(-bestNode->distance(*currentSample));
 
 }
 
@@ -389,10 +381,11 @@ void Gwr::removeEdges(std::list<Edge*>& edges) {
 bool Gwr::haveNodesWithNoEdges(std::list<NodeGwr*>& emptyEdges) {
     bool isEmpty = false;
 
-    for (std::list<NodeGwr*>::iterator itN = nodes.begin(); itN != nodes.end(); itN++) {
+    for (auto itN = nodos->begin(); itN != nodos->end(); itN++) {
 
         if ((*itN)->getNeighborsSize() == 0) {
-            emptyEdges.push_back(*itN);
+            NodeGwr* tempN = dynamic_cast<NodeGwr*>(*itN);
+            emptyEdges.push_back(tempN);
             isEmpty = true;
         }
 
@@ -406,11 +399,12 @@ bool Gwr::haveNodesWithNoEdges(std::list<NodeGwr*>& emptyEdges) {
 }
 
 void Gwr::removeNeurons(std::list<NodeGwr*>& emptyEdges) {
-    for (std::list<NodeGwr*>::iterator itN = emptyEdges.begin(); itN != emptyEdges.end(); itN++) {
+    for (auto itN = emptyEdges.begin(); itN != emptyEdges.end(); itN++) {
 
         //(*itN)->showEdges();
-        nodes.remove((*itN));
+        //nodos->erase( *itN );
         delete (*itN);
+        *itN = NULL; 
     }
 
 
@@ -440,8 +434,9 @@ void Gwr::networkTojson(std::string fileName) {
 }
 
 void Gwr::getNodesJson(nlohmann::json& jsonFile) {
-    for (std::list<NodeGwr*>::iterator itN = nodes.begin(); itN != nodes.end(); itN++) {
-        jsonFile["node"].push_back((*itN)->toJson());
+    for (auto itN = nodos->begin(); itN != nodos->end(); itN++) {
+        
+        jsonFile["node"].push_back(dynamic_cast<NodeGwr*>(*itN)->toJson());
 
     }
 

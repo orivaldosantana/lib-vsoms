@@ -37,11 +37,9 @@ public:
  
     bool getWinnerStatus();
     bool isConnectedWitth(NodeGwr* &node, Edge* &edge);
-    double distance(Sample* &s);
+ 
     
-    double distance(std::vector<double> &sIn, unsigned int initPos, unsigned int finalPos);
-    
-    double distance(Sample*& s,int initPos,int finalPos);
+
     
     double squaredDistance(Sample* &s);
     

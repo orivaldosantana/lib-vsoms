@@ -27,7 +27,7 @@ NodeGwr::NodeGwr(const Sample& s, std::string l, double _firingCounter, std::str
     label = l;
     description = d;
     inserted = false;
-    neighbors = new std::list<NodeGwr*>;
+    neighbors = new std::list<Nodo*>;
     firingCounter = _firingCounter;
     winner = false;
 
@@ -38,7 +38,7 @@ NodeGwr::NodeGwr(Sample*& s, std::string l , double _firingCounter, std::string 
     label = l;
     description = d;
     inserted = false;
-    neighbors = new std::list<NodeGwr*>;
+    neighbors = new std::list<Nodo*>;
     firingCounter = _firingCounter;
     winner = false;
     

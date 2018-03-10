@@ -41,14 +41,14 @@ private:
     Sample gerateMaxDistance();
     Sample makeTheNewNodeFeature(Sample& first, Sample& second);
     NodeGwr* gerateNodeWithMaxDistance();
-    void connectEdge(NodeGwr* a, NodeGwr* b, double age = 0, string label = "age");
+    
     void removeEdges(std::list<Edge*>&edges);
-    void removeEdge(NodeGwr* a, NodeGwr* b);
-    void addNeuron(NodeGwr* node);
+
+
     void insertNewNode(NodeGwr* &newNode, NodeGwr*& first, NodeGwr*& second);
     void removeNeurons(std::list<NodeGwr*>& emptyEdges);
     void findTheNearestNodes(NodeGwr* &first, NodeGwr* &second, Sample* &s);
-    void findTheBest(NodeGwr* &bestNode, Sample* &s);
+    void findTheBest(NodeGwr* &bestNode, Sample* s);
     void findBest(std::vector<double> &infoB, int initPos, int finalPos);
     void findTheNodeWithLargestError(NodeGwr* &worse, std::list<NodeGwr*>*& worseNeighbours);
     void findTheNodeWithLargestErrorAmomgTheNeighbours(NodeGwr* &worse, std::list<NodeGwr*>*& worseNeighbours);
@@ -72,7 +72,6 @@ private:
     void saveJson(nlohmann::json& jsonFile, std::string fileName);
     nlohmann::json loadJson(std::string fileName);
     
-    std::list<NodeGwr*> nodes;
 
     double eW;
     double eN;

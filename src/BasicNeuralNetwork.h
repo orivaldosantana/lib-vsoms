@@ -15,7 +15,7 @@
 
 class BasicNeuralNetwork {
 protected:
-    std::vector<Nodo*>*   nodos; //!< Nodos 
+    std::list<Nodo*>*   nodos; //!< Nodos 
     std::list<Edge*>*     edges; //!< Pesos 
     Counter               nodeCount; //!< Contador de nodos adicionados na rede 
     DataSet               dataSet; //!< Dados de treinamento 
@@ -38,8 +38,10 @@ public:
 
     bool                 addNeuron               (Nodo*                     n,
                                                   Sample*                   s);
-    void                 addEdge               (Nodo*                     a,
+    void                 addNeuron               (Nodo* node); 
+    void                 addEdge                 (Nodo*                     a,
                                                   Nodo*                     b);
+    void                 connectEdge             (Nodo* a, Nodo* b, double v, string label);
     virtual void         execute                 ( ) = 0; 
     virtual void         executeOneIt            ( ) = 0; 
     Nodo*                getLastNeuron           ( );
@@ -48,9 +50,9 @@ public:
    // Edge*              getEdge               (int                       i);
     double                  getNodeDrawRadius       ( ) const;     
     int                  getMaxSize              ( ) const;         
-    std::list<Edge*>*  getEdges              ( );
+    std::list<Edge*>*   getEdges              ( );
     int                  getNodeCount            ( ); 
-    std::vector<Nodo*>*  getNodes                ( );
+    std::list<Nodo*>*  getNodes                ( );
     virtual void         initialize              (std::string         fileData) = 0;
     void                 loadDataSet             (std::string         fileName); 
     void                 printConections         ( );  
