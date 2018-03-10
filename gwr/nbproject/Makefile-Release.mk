@@ -35,9 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/511e4115/Gwr.o \
-	${OBJECTDIR}/_ext/511e4115/NodeGwr.o \
-	${OBJECTDIR}/_ext/511e4115/TestGwr.o \
+	${OBJECTDIR}/Gwr.o \
+	${OBJECTDIR}/NodeGwr.o \
+	${OBJECTDIR}/TestGwr.o \
 	${OBJECTDIR}/main.o
 
 
@@ -65,20 +65,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gwr: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gwr ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/_ext/511e4115/Gwr.o: ../src/Gwr.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
+${OBJECTDIR}/Gwr.o: Gwr.cpp
+	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Gwr.o ../src/Gwr.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Gwr.o Gwr.cpp
 
-${OBJECTDIR}/_ext/511e4115/NodeGwr.o: ../src/NodeGwr.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
+${OBJECTDIR}/NodeGwr.o: NodeGwr.cpp
+	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/NodeGwr.o ../src/NodeGwr.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/NodeGwr.o NodeGwr.cpp
 
-${OBJECTDIR}/_ext/511e4115/TestGwr.o: ../src/TestGwr.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
+${OBJECTDIR}/TestGwr.o: TestGwr.cpp
+	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/TestGwr.o ../src/TestGwr.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestGwr.o TestGwr.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}

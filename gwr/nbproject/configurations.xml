@@ -4,16 +4,16 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
-      <itemPath>../src/Gwr.h</itemPath>
-      <itemPath>../src/NodeGwr.h</itemPath>
-      <itemPath>../src/TestGwr.h</itemPath>
+      <itemPath>Gwr.h</itemPath>
+      <itemPath>NodeGwr.h</itemPath>
+      <itemPath>TestGwr.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
-      <itemPath>../src/Gwr.cpp</itemPath>
-      <itemPath>../src/NodeGwr.cpp</itemPath>
-      <itemPath>../src/TestGwr.cpp</itemPath>
+      <itemPath>Gwr.cpp</itemPath>
+      <itemPath>NodeGwr.cpp</itemPath>
+      <itemPath>TestGwr.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -61,17 +61,17 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="../src/Gwr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Gwr.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../src/Gwr.h" ex="false" tool="3" flavor2="0">
+      <item path="Gwr.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../src/NodeGwr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="NodeGwr.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../src/NodeGwr.h" ex="false" tool="3" flavor2="0">
+      <item path="NodeGwr.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../src/TestGwr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TestGwr.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../src/TestGwr.h" ex="false" tool="3" flavor2="0">
+      <item path="TestGwr.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -96,17 +96,17 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="../src/Gwr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Gwr.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../src/Gwr.h" ex="false" tool="3" flavor2="0">
+      <item path="Gwr.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../src/NodeGwr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="NodeGwr.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../src/NodeGwr.h" ex="false" tool="3" flavor2="0">
+      <item path="NodeGwr.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../src/TestGwr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TestGwr.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../src/TestGwr.h" ex="false" tool="3" flavor2="0">
+      <item path="TestGwr.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
