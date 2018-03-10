@@ -74,6 +74,8 @@ void Test::simpleNN() {
     
     snn.initialize(dataFile);
     snn.execute(); 
+    
+    snn.toJson("/tmp/simplenn.json");
 }
 
 

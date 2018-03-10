@@ -8,9 +8,15 @@
 #include "BasicNeuralNetwork.h"
 
 BasicNeuralNetwork::BasicNeuralNetwork() {
-    weights = new std::list<Weight*>;
+    edges = new std::list<Edge*>;
     nodos = new std::vector<Nodo*>;
-    nodeDrawRadius = 0.012; 
+    epoch = 0; 
+    nodeCount = 0; 
+    maxEpoch = MAXINT; 
+    maxSize = MAXINT; 
+    currentIt = MAXINT; 
+    
+    
 }
 
 BasicNeuralNetwork::BasicNeuralNetwork(const BasicNeuralNetwork& orig) {
@@ -18,7 +24,7 @@ BasicNeuralNetwork::BasicNeuralNetwork(const BasicNeuralNetwork& orig) {
 }
 
 BasicNeuralNetwork::~BasicNeuralNetwork() {
-    delete weights;
+    delete edges;
     delete nodos;
 }
 
@@ -33,19 +39,19 @@ bool BasicNeuralNetwork::addNeuron(Nodo* n, Sample* s) {
     return false;
 }
 
-void BasicNeuralNetwork::addWeight(Nodo* a, Nodo* b) {
+void BasicNeuralNetwork::addEdge(Nodo* a, Nodo* b) {
     if (!a->isNeighbor(b)) {
-        Weight* w = new Weight(0, a, b, "");
-        a->addWeight(w);
-        b->addWeight(w);
+        Edge* w = new Edge(0, a, b, "");
+        a->addEdge(w);
+        b->addEdge(w);
         a->addNeighbor(b);
         b->addNeighbor(a);
-        weights->push_back(w);
+        edges->push_back(w);
     }
 }
 
-std::list<Weight*>* BasicNeuralNetwork::getWeights() {
-    return weights;
+std::list<Edge*>* BasicNeuralNetwork::getEdges() {
+    return edges;
 }
 
 std::vector<Nodo*>* BasicNeuralNetwork::getNodes() {
@@ -56,8 +62,8 @@ Nodo* BasicNeuralNetwork::getLastNeuron() {
     return nodos->back();
 }
 
-int BasicNeuralNetwork::getAmountWeights() {
-    return weights->size();
+int BasicNeuralNetwork::getAmountEdges() {
+    return edges->size();
 }
 
 int BasicNeuralNetwork::getAmountNeurons() {
@@ -65,7 +71,7 @@ int BasicNeuralNetwork::getAmountNeurons() {
 }
 
 int BasicNeuralNetwork::getNodeCount() {
-    return nodeCount;
+    return nodeCount.count;
 }
 
 void BasicNeuralNetwork::loadDataSet(std::string fileName){
@@ -134,23 +140,23 @@ void BasicNeuralNetwork::printNeighbors(){
 
 
 
-void BasicNeuralNetwork::removeWeight(Nodo* a, Nodo* b) {
-    Weight* w = a->getCommomWeight(b);
+void BasicNeuralNetwork::removeEdge(Nodo* a, Nodo* b) {
+    Edge* w = a->getCommomEdge(b);
     if (w != NULL) {
-        a->removeWeight(w);
-        b->removeWeight(w);
+        a->removeEdge(w);
+        b->removeEdge(w);
         a->removeNeighbor(b);
         b->removeNeighbor(a);
-        weights->remove(w);
+        edges->remove(w);
     }
 }
 
 void BasicNeuralNetwork::saveGraph(std::string fileName ){
     std::ofstream file(fileName.c_str());
     file << "graph G { " << std::endl;
-    std::list<Weight*>* weights = getWeights();
-    std::list<Weight*>::iterator itW = weights->begin();
-    while (itW != weights->end()) {
+    std::list<Edge*>* edges = getEdges();
+    std::list<Edge*>::iterator itW = edges->begin();
+    while (itW != edges->end()) {
         Nodo* n1 = (*itW)->getAheadNeuron();
         file << n1->getLabel() << " -- ";
         Nodo* n2 = (*itW)->getBackNeuron();       
@@ -197,3 +203,48 @@ void BasicNeuralNetwork::setMaxSize(int maxSize) {
 int BasicNeuralNetwork::getMaxSize() const {
     return maxSize;
 }
+
+void BasicNeuralNetwork::toJson(std::string fileName) {
+
+    nlohmann::json jsonFile;
+
+
+    getNodesJson(jsonFile);
+    getEdgesJson(jsonFile);   
+
+    jsonFile["properties"]["nodeCount"] = nodeCount.count;  
+    jsonFile["properties"]["epoch"] = epoch; 
+    jsonFile["properties"]["maxEpoch"] = maxEpoch; 
+    jsonFile["properties"]["maxSize"] = maxSize; 
+    jsonFile["properties"]["currentIt"] = currentIt; 
+
+    
+    
+    saveJson(jsonFile, fileName);
+
+}
+
+void BasicNeuralNetwork::getNodesJson(nlohmann::json& jsonFile) {
+    for (auto itN = nodos->begin(); itN != nodos->end(); itN++) {
+        jsonFile["node"].push_back((*itN)->toJson());
+
+    }
+}
+
+void BasicNeuralNetwork::getEdgesJson(nlohmann::json& jsonFile) {
+
+    for (auto itE = edges->begin(); itE != edges->end(); itE++) {
+        //(*itE)->print();
+        jsonFile["edge"].push_back((*itE)->toJson());
+    }
+
+}
+
+void BasicNeuralNetwork::saveJson(nlohmann::json& jsonFile, std::string fileName) {
+    ofstream file;
+    file.open(fileName, ios::out);
+
+    file << jsonFile << std::endl;
+}
+
+

@@ -27,6 +27,7 @@ public:
     bool            getRandomSample             (Sample* &s); 
     Sample*         getRandomSample             ( ); 
     Sample*         getSample                   (unsigned int i);
+    Sample*         getSample                   ();
     int             getSize                     ( ); 
     bool            isEmpty                     ( );
     void            loadDataFromFile            (std::string fileName);

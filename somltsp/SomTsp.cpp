@@ -54,13 +54,13 @@ void SomTsp::initialize(DataSet &dt) {
     s = new Sample(info);
     NodoTsp* b = new NodoTsp(*s, "2");
     addNeuron(b, s);
-    addWeight(a, b);
+    addEdge(a, b);
 
     /*
     NodoTsp* c = new NodoTsp(*s, "3");
     addNeuron(c, s);
-    addWeight(c, a);
-    addWeight(c, b);
+    addEdge(c, a);
+    addEdge(c, b);
 */
     nodeCount = 2; 
 }
@@ -132,6 +132,7 @@ void SomTsp::executeOneIt() {
         
         //printNodos(); 
         saveTxtNodos("somtsp");
+        toJson("/tmp/somtsp"+std::to_string(epoch)+".json");
     }
     //Find the best and second best neuron
     // find best neuron
@@ -155,9 +156,9 @@ void SomTsp::executeOneIt() {
     if (bestN->isEnabled()) 
         //If the network size is less then maximum size and the wins count of
         //winner node is equal to 2 then add new node  
-        if ((nodos->size() < maxSize) and (wins == 2) ) {
+        if ((nodos->size() < maxSize) and (wins == 5) ) {
             // remove the conection between the best and the second best neuron
-            removeWeight(bestN, secondBestN);
+            removeEdge(bestN, secondBestN);
             //Neuron r, from imput
             //Sample* d = bestN->getData(); 
             //Create a new nodo at same place of the winner node 
@@ -168,9 +169,9 @@ void SomTsp::executeOneIt() {
             //Add the new nodo to the network
             addNeuron(nr, bestN);
             //Add conexions between the winner and the new node
-            addWeight(bestN, nr);
+            addEdge(bestN, nr);
             //Add conexions between the second best and the new node 
-            addWeight(secondBestN, nr);
+            addEdge(secondBestN, nr);
               
         //Else no new node is inserted, update the weights vector of the 
         //winner node and his neighbors 
@@ -245,9 +246,9 @@ void SomTsp::removeNeuron(Nodo* n) {
             Nodo* firstNeighbor = *itNeighbor;
             itNeighbor++;
             Nodo* secondNeighbor = *itNeighbor;
-            removeWeight(firstNeighbor, n);
-            removeWeight(secondNeighbor, n);
-            addWeight(firstNeighbor, secondNeighbor);
+            removeEdge(firstNeighbor, n);
+            removeEdge(secondNeighbor, n);
+            addEdge(firstNeighbor, secondNeighbor);
         } else {
             std::cout << " Neuron " << n->getLabel() << " was not removed. " << std::endl; 
             

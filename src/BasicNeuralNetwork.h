@@ -11,11 +11,13 @@
 #include "Nodo.h"
 #include "DataSet.h"
 
+#include "Counter.h"
+
 class BasicNeuralNetwork {
 protected:
     std::vector<Nodo*>*   nodos; //!< Nodos 
-    std::list<Weight*>*   weights; //!< Pesos 
-    int                   nodeCount; //!< Contador de nodos adicionados na rede 
+    std::list<Edge*>*     edges; //!< Pesos 
+    Counter               nodeCount; //!< Contador de nodos adicionados na rede 
     DataSet               dataSet; //!< Dados de treinamento 
     int                   epoch;  //!< Uma apresentação completa de todas as amostras da base de dados 
     int                   maxEpoch; //!< Número máximo de épocas de treinamento 
@@ -25,7 +27,7 @@ protected:
     double                nodeDrawRadius; //!< Tamanho do raio para desenhar cada nodo no software de visualização 
     
 
-    void                 removeWeight            (Nodo*                     a,
+    void                 removeEdge            (Nodo*                     a,
                                                   Nodo*                     b);
 
   
@@ -36,17 +38,17 @@ public:
 
     bool                 addNeuron               (Nodo*                     n,
                                                   Sample*                   s);
-    void                 addWeight               (Nodo*                     a,
+    void                 addEdge               (Nodo*                     a,
                                                   Nodo*                     b);
     virtual void         execute                 ( ) = 0; 
     virtual void         executeOneIt            ( ) = 0; 
     Nodo*                getLastNeuron           ( );
-    int                  getAmountWeights        ( );
+    int                  getAmountEdges        ( );
     int                  getAmountNeurons        ( );
-   // Weight*              getWeight               (int                       i);
+   // Edge*              getEdge               (int                       i);
     double                  getNodeDrawRadius       ( ) const;     
     int                  getMaxSize              ( ) const;         
-    std::list<Weight*>*  getWeights              ( );
+    std::list<Edge*>*  getEdges              ( );
     int                  getNodeCount            ( ); 
     std::vector<Nodo*>*  getNodes                ( );
     virtual void         initialize              (std::string         fileData) = 0;
@@ -63,6 +65,11 @@ public:
     void                 setMaxSize              (int maxSize);    
     void                 setMaxEpoch             (int maxEpoch);
     void                 setNodeDrawRadius       (int NodeDrawRadius);
+    // métodos para salvar o JSON 
+    void                 toJson                  (std::string fileName);
+    void                 getNodesJson            (nlohmann::json& jsonFile);
+    void                 getEdgesJson            (nlohmann::json& jsonFile);
+    void                 saveJson                (nlohmann::json& jsonFile, std::string fileName);
 
 };
 

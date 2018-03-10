@@ -56,6 +56,13 @@ Sample* DataSet::getRandomSample() {
     return (matrix[index[sampleI]]);
 }
 
+Sample* DataSet::getSample() {
+    sampleI++;
+    if (((uint) sampleI) >= matrix.size())
+        sampleI = 0;
+    return (matrix[sampleI]);
+}
+
 Sample* DataSet::getSample(unsigned int i) {
     if (i >= matrix.size())
         i = 0;

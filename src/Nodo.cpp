@@ -14,6 +14,15 @@ Nodo::Nodo(){
     neighbors = new std::list<Nodo*>;
 }
 
+Nodo::Nodo(nlohmann::json& jsonFile){
+    jsonInformationToVectorInformation(jsonFile["information"]); 
+    label = jsonFile["label"];
+    description = jsonFile["description"]; 
+    inserted = false; 
+    winner = false; 
+    
+} 
+
 Nodo::Nodo(const Nodo& orig) {
 
 }
@@ -23,6 +32,7 @@ Nodo::Nodo(const Sample& s, std::string l, std::string d) {
     label = l;
     description = d;
     neighbors = new std::list<Nodo*>;
+    inserted = false; 
 }
 
 Nodo::~Nodo() {
@@ -33,24 +43,24 @@ void Nodo::addNeighbor(Nodo* n) {
     neighbors->push_back(n);
 }
 
-void Nodo::addWeight(Weight* iw) {
-    weights.push_back(iw);
+void Nodo::addEdge(Edge* iw) {
+    edges.push_back(iw);
 }
 
 void Nodo::clear() {
-    std::list<Weight*>::iterator itW;
-    itW = weights.begin();
-    while (itW != weights.end()) {
+    std::list<Edge*>::iterator itW;
+    itW = edges.begin();
+    while (itW != edges.end()) {
         delete (*itW);
         itW++;
     }
-    weights.clear();
+    edges.clear();
 }
 
-Weight* Nodo::getCommomWeight(Nodo* n){
-   std::list<Weight*>::iterator itW;
-   itW = weights.begin();
-   while (itW != weights.end())
+Edge* Nodo::getCommomEdge(Nodo* n){
+   std::list<Edge*>::iterator itW;
+   itW = edges.begin();
+   while (itW != edges.end())
    {
       if  ((*itW)->getAheadNeuron() == n)  {
          return *itW;
@@ -99,15 +109,25 @@ void Nodo::setFeatures(Sample* s) {
     information = s->information;
 }
 
+nlohmann::json Nodo::toJson(){
+    nlohmann::json node; 
+    
+    node["information"] = information; 
+    node["label"] = label; 
+    node["description"] = description; 
+    
+    return node; 
+} 
+
 bool Nodo::isInserted() {
     return inserted;
 }
 
 bool Nodo::isNeighbor(Nodo* n) {
     bool b = false;
-    std::list<Weight*>::iterator itW;
-    itW = weights.begin();
-    while (itW != weights.end()) {
+    std::list<Edge*>::iterator itW;
+    itW = edges.begin();
+    while (itW != edges.end()) {
         if ((*itW)->getAheadNeuron() == n) {
             b = true;
             break;
@@ -121,10 +141,10 @@ bool Nodo::isNeighbor(Nodo* n) {
 }
 
 void Nodo::print() {
-    std::list<Weight*>::iterator itW;
-    itW = weights.begin();
+    std::list<Edge*>::iterator itW;
+    itW = edges.begin();
     std::cout << label << " : ";
-    while (itW != weights.end()) {
+    while (itW != edges.end()) {
         std::cout << (*itW)->getAheadNeuron()->getLabel() << " - " << (*itW)->getBackNeuron()->getLabel() << ", ";
         itW++;
     }
@@ -158,9 +178,9 @@ void Nodo::removeNeighbor(Nodo* n) {
 }
 
 
-//Cuidado ao chamar este método pois  Weight faz referência a outro neurônio 
-void Nodo::removeWeight(Weight* w) {
-    weights.remove(w);
+//Cuidado ao chamar este método pois  Edge faz referência a outro neurônio 
+void Nodo::removeEdge(Edge* w) {
+    edges.remove(w);
 }
 
 void Nodo::updateFeatures(double d, Sample* s) {
@@ -170,5 +190,15 @@ void Nodo::updateFeatures(double d, Sample* s) {
         *it += d * (*itS - *it);
         itS++;
     }
+}
+
+void  Nodo::jsonInformationToVectorInformation(nlohmann::json& jsonFile){
+    
+    for (nlohmann::json::iterator itJ =  jsonFile.begin() ; itJ !=jsonFile.end(); itJ++){
+        double number = (*itJ);
+       information.push_back(number);
+    }
+    
+    
 }
 

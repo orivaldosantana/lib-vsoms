@@ -23,10 +23,10 @@ using namespace std;
 int main(int argc, char** argv) {
 	Test test;
 	
-    //test.samplesOperations();
+    test.samplesOperations();
     test.dataSetOperations(); 
-    //test.nodoOperations(); 
-    //test.simpleNN();
+    test.nodoOperations(); 
+    test.simpleNN();
 
     return 0;
 }

@@ -37,7 +37,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/_ext/511e4115/BasicNeuralNetwork.o \
 	${OBJECTDIR}/_ext/511e4115/Conexion.o \
+	${OBJECTDIR}/_ext/511e4115/Counter.o \
 	${OBJECTDIR}/_ext/511e4115/DataSet.o \
+	${OBJECTDIR}/_ext/511e4115/Edge.o \
 	${OBJECTDIR}/_ext/511e4115/Nodo.o \
 	${OBJECTDIR}/_ext/511e4115/Sample.o \
 	${OBJECTDIR}/_ext/511e4115/Weight.o
@@ -72,32 +74,42 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvsoms.a: ${OBJECTFILES}
 ${OBJECTDIR}/_ext/511e4115/BasicNeuralNetwork.o: ../src/BasicNeuralNetwork.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/BasicNeuralNetwork.o ../src/BasicNeuralNetwork.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/BasicNeuralNetwork.o ../src/BasicNeuralNetwork.cpp
 
 ${OBJECTDIR}/_ext/511e4115/Conexion.o: ../src/Conexion.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Conexion.o ../src/Conexion.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Conexion.o ../src/Conexion.cpp
+
+${OBJECTDIR}/_ext/511e4115/Counter.o: ../src/Counter.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Counter.o ../src/Counter.cpp
 
 ${OBJECTDIR}/_ext/511e4115/DataSet.o: ../src/DataSet.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/DataSet.o ../src/DataSet.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/DataSet.o ../src/DataSet.cpp
+
+${OBJECTDIR}/_ext/511e4115/Edge.o: ../src/Edge.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Edge.o ../src/Edge.cpp
 
 ${OBJECTDIR}/_ext/511e4115/Nodo.o: ../src/Nodo.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Nodo.o ../src/Nodo.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Nodo.o ../src/Nodo.cpp
 
 ${OBJECTDIR}/_ext/511e4115/Sample.o: ../src/Sample.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Sample.o ../src/Sample.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Sample.o ../src/Sample.cpp
 
 ${OBJECTDIR}/_ext/511e4115/Weight.o: ../src/Weight.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/511e4115
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Weight.o ../src/Weight.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/511e4115/Weight.o ../src/Weight.cpp
 
 # Subprojects
 .build-subprojects:

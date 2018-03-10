@@ -9,28 +9,31 @@
 #define	NODO_H
 
 #include <iostream> 
-#include "Weight.h"
+#include "Edge.h"
 #include "Sample.h"
 #include <list>
 
-class Weight;
+#include "json.hpp"
+
+class Edge;
 
 class Nodo: public Sample  {
      
 public:
     
-    Nodo                ( ); 
+    Nodo                ( );
+    Nodo                (nlohmann::json& jsonFile); 
     Nodo                (const Nodo&               orig);
     Nodo                (const Sample                &s,
                          std::string           l = "n ",
                          std::string           d = "d "); 
     virtual ~Nodo();
     void                addNeighbor                 (Nodo*                   n);
-    void                addWeight                   (Weight*                iw);
+    void                addEdge                   (Edge*                iw);
     void                clear                       ( );
     bool                isInserted                  ( );
     bool                isNeighbor                  (Nodo*                   n);  
-    Weight*             getCommomWeight             (Nodo*                   n); 
+    Edge*             getCommomEdge             (Nodo*                   n); 
     std::string         getLabel                    ( ); 
     double              getFeature                  (int                     i);        
     std::list<Nodo*>*   getNeighbors                ( );
@@ -42,19 +45,22 @@ public:
     void                setFeature                  (double f, int i); 
 
     //std::string         toString                    ( );
-    void                removeWeight                (Weight*                 w);
+    void                removeEdge                (Edge*                 w);
     void                removeNeighbor              (Nodo*                   n);
     void                updateFeatures              (double                  d,
                                                      Sample*                 s);
-    
+    // métodos para exportar para JSON 
+    nlohmann::json toJson(); 
+    void  jsonInformationToVectorInformation(nlohmann::json& jsonFile);
      
 
 protected:
-    std::list<Weight*>          weights;
+    std::list<Edge*>            edges;
     std::list<Nodo*>           *neighbors;
     std::string                 label;
     std::string                 description;
     bool                        inserted;
+    bool                        winner; 
 };
 
 #endif	/* NODO_H */

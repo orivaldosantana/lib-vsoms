@@ -6,7 +6,9 @@
                    projectFiles="true">
       <itemPath>../src/BasicNeuralNetwork.h</itemPath>
       <itemPath>../src/Conexion.h</itemPath>
+      <itemPath>../src/Counter.h</itemPath>
       <itemPath>../src/DataSet.h</itemPath>
+      <itemPath>../src/Edge.h</itemPath>
       <itemPath>../src/Nodo.h</itemPath>
       <itemPath>../src/Sample.h</itemPath>
       <itemPath>../src/Weight.h</itemPath>
@@ -22,7 +24,9 @@
                    projectFiles="true">
       <itemPath>../src/BasicNeuralNetwork.cpp</itemPath>
       <itemPath>../src/Conexion.cpp</itemPath>
+      <itemPath>../src/Counter.cpp</itemPath>
       <itemPath>../src/DataSet.cpp</itemPath>
+      <itemPath>../src/Edge.cpp</itemPath>
       <itemPath>../src/Nodo.cpp</itemPath>
       <itemPath>../src/Sample.cpp</itemPath>
       <itemPath>../src/Weight.cpp</itemPath>
@@ -48,6 +52,10 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <commandlineTool>g++</commandlineTool>
+        </ccTool>
         <archiverTool>
         </archiverTool>
       </compileType>
@@ -61,9 +69,17 @@
       </item>
       <item path="../src/Conexion.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../src/Counter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/Counter.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../src/DataSet.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../src/DataSet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/Edge.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/Edge.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../src/Nodo.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -112,9 +128,17 @@
       </item>
       <item path="../src/Conexion.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../src/Counter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/Counter.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../src/DataSet.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../src/DataSet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/Edge.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/Edge.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../src/Nodo.cpp" ex="false" tool="1" flavor2="0">
       </item>
