@@ -70,22 +70,22 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gwr: ${OBJECTFILES}
 ${OBJECTDIR}/Gwr.o: Gwr.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Gwr.o Gwr.cpp
+	$(COMPILE.cc) -g -I../src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Gwr.o Gwr.cpp
 
 ${OBJECTDIR}/NodeGwr.o: NodeGwr.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/NodeGwr.o NodeGwr.cpp
+	$(COMPILE.cc) -g -I../src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/NodeGwr.o NodeGwr.cpp
 
 ${OBJECTDIR}/TestGwr.o: TestGwr.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestGwr.o TestGwr.cpp
+	$(COMPILE.cc) -g -I../src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestGwr.o TestGwr.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

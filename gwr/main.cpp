@@ -12,6 +12,7 @@
  */
 
 #include <cstdlib>
+#include "TestGwr.h" 
 
 using namespace std;
 
@@ -19,7 +20,8 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-
+    TestGwr test; 
+    test.maestro1();
     return 0;
 }
 

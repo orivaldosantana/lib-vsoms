@@ -22,6 +22,7 @@ public:
     TestGwr();
     TestGwr(const TestGwr& orig);
     void executeNetwork();
+    void maestro1(); 
     virtual ~TestGwr();
 private:
 

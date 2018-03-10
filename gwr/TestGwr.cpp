@@ -26,7 +26,7 @@ void TestGwr::executeNetwork() {
 
     Gwr network;
 
-    network.initialize("testData/smartPhone/frenteType2.csv");
+    network.initialize ("testData/smartPhone/frenteType2.csv");
     int iterations = 20000;
 
     for (int i = 0; i < iterations; i++) {
@@ -36,6 +36,20 @@ void TestGwr::executeNetwork() {
     network.networkTojson("testData/ver.json");
 
 
+
+}
+
+void TestGwr::maestro1(){
+        Gwr network;
+
+    network.initialize("../data/maestro/maestro1XY.txt");
+    int iterations = 20000;
+
+    for (int i = 0; i < iterations; i++) {
+        network.execute();
+
+    }
+    network.networkTojson("testData/ver.json");
 
 }
 
