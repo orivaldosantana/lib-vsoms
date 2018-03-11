@@ -24,6 +24,7 @@ class Sample {
     friend class NodoTsp;
     friend class SomStg2Node; 
     friend class NodeSomCstg; 
+    friend class NodeGwr; 
 public:
     Sample(); 
     Sample(int s);
@@ -37,6 +38,9 @@ public:
     Sample              operator/                 (double                   d);
 
     double              distance                  (Sample                &sIn);
+    double              distance(std::vector<double> &sIn, unsigned int initPos, unsigned int finalPos);
+    
+    double              distance(Sample *s, int initPos, int finalPos);
     int                 getSize                   ( );
     void                getFeatures               (std::vector<double>  &info); 
     double              getFeature                (int index); 

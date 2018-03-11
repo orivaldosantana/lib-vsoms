@@ -33,7 +33,8 @@ public:
     void                clear                       ( );
     bool                isInserted                  ( );
     bool                isNeighbor                  (Nodo*                   n);  
-    Edge*             getCommomEdge             (Nodo*                   n); 
+    Edge*               getCommomEdge             (Nodo*                   n);
+    std::list<Edge*>    getEdges                    ( ); 
     std::string         getLabel                    ( ); 
     double              getFeature                  (int                     i);        
     std::list<Nodo*>*   getNeighbors                ( );

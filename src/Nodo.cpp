@@ -89,6 +89,10 @@ int Nodo::getNeighborsSize() {
     return neighbors->size();
 }
 
+ std::list<Edge*> Nodo::getEdges(){
+     return edges;
+ }
+
 double Nodo::getFeature(int i){
     if ( i < information.size() )
         return information.at(i);

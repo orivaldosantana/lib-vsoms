@@ -1,0 +1,316 @@
+{
+    "edge": [
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.259453770369936,
+                    0.563121770775869
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.26207182051752,
+                    0.491608112410213
+                ],
+                "label": "0"
+            },
+            "value": 2.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.252018697530079,
+                    0.647999662124494
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.259453770369936,
+                    0.563121770775869
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.585202018617473,
+                    0.377669326706281
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.560451167983725,
+                    0.375711493785702
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.355225708081497,
+                    0.3545658458282
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.308796807897977,
+                    0.371897554972355
+                ],
+                "label": "0"
+            },
+            "value": 2.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.355225708081497,
+                    0.3545658458282
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.560451167983725,
+                    0.375711493785702
+                ],
+                "label": "0"
+            },
+            "value": 5.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.252018697530079,
+                    0.647999662124494
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.246349431281892,
+                    0.715744181494269
+                ],
+                "label": "0"
+            },
+            "value": 6.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.266816636931322,
+                    0.414977737783873
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.26207182051752,
+                    0.491608112410213
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.266816636931322,
+                    0.414977737783873
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.308796807897977,
+                    0.371897554972355
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.239716022118464,
+                    0.824767880706123
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.239809717029552,
+                    0.807230426003632
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.239809717029552,
+                    0.807230426003632
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.246349431281892,
+                    0.715744181494269
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        }
+    ],
+    "node": [
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.246349431281892,
+                0.715744181494269
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.26207182051752,
+                0.491608112410213
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.259453770369936,
+                0.563121770775869
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.308796807897977,
+                0.371897554972355
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.252018697530079,
+                0.647999662124494
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.560451167983725,
+                0.375711493785702
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.585202018617473,
+                0.377669326706281
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.355225708081497,
+                0.3545658458282
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.239809717029552,
+                0.807230426003632
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.266816636931322,
+                0.414977737783873
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.239716022118464,
+                0.824767880706123
+            ],
+            "label": "0"
+        }
+    ],
+    "properties": {
+        "aMax": 50.0,
+        "alphaB": 1.05,
+        "alphaT": 0.9,
+        "currentIteration": 1,
+        "eN": 0.06,
+        "eW": 0.02,
+        "firingThreshold": 0.1,
+        "talB": 3.33,
+        "talN": 14.3
+    }
+}
