@@ -92,6 +92,7 @@ void DataSet::loadDataFromFile(std::string fileName) {
     }
     float columns, lines, data;
     file >> lines >> columns;
+   
 
     for (int i = 0; i < lines; i++) {
         if (file.good()) {

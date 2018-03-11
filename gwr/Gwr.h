@@ -71,6 +71,8 @@ private:
     NodeGwr* findNode(NodeGwr*& node);
     void saveJson(nlohmann::json& jsonFile, std::string fileName);
     nlohmann::json loadJson(std::string fileName);
+    inline NodeGwr* toNodeGwr(Nodo* nodo){ return  dynamic_cast<NodeGwr*>(nodo);}
+    inline Nodo* toNodo(NodeGwr* nodo){ return  dynamic_cast<Nodo*>(nodo);}
     
 
     double eW;

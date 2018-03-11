@@ -42,6 +42,8 @@ void TestGwr::executeNetwork() {
 void TestGwr::maestro1(){
         Gwr network;
 
+        
+        
     network.initialize("../data/maestro/maestro1XY.txt");
     int iterations = 20000;
 
@@ -49,7 +51,7 @@ void TestGwr::maestro1(){
         network.execute();
 
     }
-    network.networkTojson("testData/ver.json");
+    network.networkTojson("maestro1XY.json");
 
 }
 

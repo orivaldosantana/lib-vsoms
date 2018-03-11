@@ -21,7 +21,7 @@ Gwr::Gwr() {
     aMax = 50;
     currentNode.count = 0;
     currentIteration = 1;
-    alphaT = 0.10;
+    alphaT = 0.90;
     alphaB = 1.05;
     alphaN = 1.05;
     tauB = 3.33;
@@ -84,8 +84,8 @@ Sample Gwr::gerateRandomPosition() {
 
 void Gwr::initialize(std::string fileData) {
     //load input file
-    //  dataSet.loadDataFromFile(fileData);
-    dataSet.loadDataFromCsvFile(fileData);
+      dataSet.loadDataFromFile(fileData);
+    //dataSet.loadDataFromCsvFile(fileData);
     // dataSet.show();
     init();
 }
@@ -105,7 +105,9 @@ void Gwr::execute() {
 
     if (firstSample)
         epoch++;
-
+    
+    
+    
 
     /*Select the best matching node, and the second best, that
       is the nodes s,t */
@@ -115,7 +117,7 @@ void Gwr::execute() {
     if (first->isConnectedWitth(second, edge)) {
         edge->setValue(0);
     } else { // otherwise, set the age of the connection to 0.
-        connectEdge( dynamic_cast<Nodo*>(first), dynamic_cast<Nodo*>(second),0,"age");
+        connectEdge( first, second,0,"age");
     }
 
     //Calculate the activity of the best matching unit
@@ -127,11 +129,11 @@ void Gwr::execute() {
         //Add the new node, r
         insertNewNode(newNode, first, second);
         //Insert edges between r and s and between r and t
-        connectEdge(dynamic_cast<Nodo*>(newNode), dynamic_cast<Nodo*>(first),0,"age");
-        connectEdge(dynamic_cast<Nodo*>(newNode), dynamic_cast<Nodo*>(second),0,"age");
+        connectEdge(newNode, first,0,"age");
+        connectEdge(newNode, second,0,"age");
 
         //Remove the link between s and t
-        removeEdge(dynamic_cast<Nodo*>(first), dynamic_cast<Nodo*>(second));
+        removeEdge(first,second);
     } else { /*If a new node is not added, adapt the positions of the winning node and its neighbours,
            * i, that is the nodes to which it is connected */
         MoveTheWinnerAndTopologicalNeighbors(first, currentSample);
@@ -164,8 +166,10 @@ void Gwr::execute() {
     if (haveNodesWithNoEdges(emptyEdges)) {
 
         removeNeurons(emptyEdges);
-        // std::cout << "remove" << std::endl;
+      
     }
+    
+    std::cout << nodos->size() << endl;
 
 
 
@@ -286,8 +290,8 @@ void Gwr::MoveTheNeighbours(std::list<Nodo*>*& neighbors, Sample*& s) {
     double firingCounter;
     for (auto itN = neighbors->begin(); itN != neighbors->end(); itN++) {
 
-        NodeGwr* tempN = dynamic_cast<NodeGwr*> (*itN);
-        firingCounter = (tempN)->getFiringCounter();
+        
+        firingCounter = toNodeGwr(*itN)->getFiringCounter();
         (*itN)->updateFeatures(eN*firingCounter, s);
 
     }
@@ -384,8 +388,8 @@ bool Gwr::haveNodesWithNoEdges(std::list<NodeGwr*>& emptyEdges) {
     for (auto itN = nodos->begin(); itN != nodos->end(); itN++) {
 
         if ((*itN)->getNeighborsSize() == 0) {
-            NodeGwr* tempN = dynamic_cast<NodeGwr*>(*itN);
-            emptyEdges.push_back(tempN);
+            
+            emptyEdges.push_back(toNodeGwr(*itN));
             isEmpty = true;
         }
 
@@ -402,7 +406,7 @@ void Gwr::removeNeurons(std::list<NodeGwr*>& emptyEdges) {
     for (auto itN = emptyEdges.begin(); itN != emptyEdges.end(); itN++) {
 
         //(*itN)->showEdges();
-        //nodos->erase( *itN );
+        nodos->remove(*itN);
         delete (*itN);
         *itN = NULL; 
     }
