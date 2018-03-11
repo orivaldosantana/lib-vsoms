@@ -169,7 +169,7 @@ void Gwr::execute() {
       
     }
     
-    std::cout << nodos->size() << endl;
+   
 
 
 
