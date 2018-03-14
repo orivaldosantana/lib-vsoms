@@ -21,7 +21,8 @@ using namespace std;
  */
 int main(int argc, char** argv) {
     TestGwr test; 
-    test.maestro1();
+    //test.maestro1();
+    test.maestro2D();
     return 0;
 }
 

@@ -24,6 +24,7 @@ public:
     void executeNetwork();
     void maestro1(); 
     virtual ~TestGwr();
+    void maestro2D();
 private:
 
 };

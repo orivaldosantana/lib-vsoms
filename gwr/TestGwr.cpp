@@ -55,3 +55,20 @@ void TestGwr::maestro1(){
 
 }
 
+
+void TestGwr::maestro2D(){
+    Gwr network;
+    network.seTfiringThreshold(0.9999);
+    network.setActivityThreshold(0.93);
+    
+    network.initializeFromCSV("/home/barbosa/Documentos/Pesquisa/Maestro/Data/Compasso2x4-2d.csv");
+    int iterations = 20000;
+
+    for (int i = 0; i < iterations; i++) {
+        network.execute();
+
+    }
+    network.networkTojson("maestro2D-1.json");
+
+}
+

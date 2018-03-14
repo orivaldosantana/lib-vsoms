@@ -38,6 +38,14 @@ Gwr::Gwr(const Gwr& orig) {
 Gwr::~Gwr() {
 }
 
+void Gwr::seTfiringThreshold(double f){
+    firingThreshold = f;
+}
+
+void Gwr::setActivityThreshold(double a){
+    alphaT = a;
+}
+
 void Gwr::init() {
     Sample randomPosition;
 
@@ -86,6 +94,14 @@ void Gwr::initialize(std::string fileData) {
     //load input file
       dataSet.loadDataFromFile(fileData);
     //dataSet.loadDataFromCsvFile(fileData);
+    // dataSet.show();
+    init();
+}
+
+void Gwr::initializeFromCSV(std::string fileData) {
+    //load input file
+    //  dataSet.loadDataFromFile(fileData);
+    dataSet.loadDataFromCsvFile(fileData);
     // dataSet.show();
     init();
 }

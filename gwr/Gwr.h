@@ -25,10 +25,13 @@ public:
     Gwr(std::string jsonFile);
     virtual ~Gwr();
     void initialize(std::string fileData);
+    void initializeFromCSV(std::string fileData);
     void init();
     void execute();
     void executeOneIt();
 
+    void seTfiringThreshold(double f);
+    void setActivityThreshold(double a);
     
     void networkTojson(std::string fileName);
 
