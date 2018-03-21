@@ -1,0 +1,1219 @@
+{
+    "edge": [
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.197696190833403,
+                    0.882520398366103
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.232465198283971,
+                    0.999483772440905
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.340159741372746,
+                    0.936332355582601
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.323529159311937,
+                    0.962154492232856
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.340159741372746,
+                    0.936332355582601
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.358066881441739,
+                    0.850367632796484
+                ],
+                "label": "0"
+            },
+            "value": 2.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.470246591712634,
+                    0.425760568714676
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.389799564644973,
+                    0.417095319943081
+                ],
+                "label": "0"
+            },
+            "value": 7.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.459854583085543,
+                    0.501036364339028
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.470246591712634,
+                    0.425760568714676
+                ],
+                "label": "0"
+            },
+            "value": 4.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.33815932078813,
+                    0.454164769184174
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.389799564644973,
+                    0.417095319943081
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.330884498257793,
+                    0.378350118413771
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.389799564644973,
+                    0.417095319943081
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.330884498257793,
+                    0.378350118413771
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.327154031902947,
+                    0.327735934228989
+                ],
+                "label": "0"
+            },
+            "value": 3.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.327154031902947,
+                    0.327735934228989
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.34115623988302,
+                    0.276489726164721
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.20125705737247,
+                    0.832144461129617
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.197696190833403,
+                    0.882520398366103
+                ],
+                "label": "0"
+            },
+            "value": 2.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.20125705737247,
+                    0.832144461129617
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.214815183481407,
+                    0.729793684240061
+                ],
+                "label": "0"
+            },
+            "value": 2.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.740473112490984,
+                    0.371702248506296
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.703416181389281,
+                    0.336466076530765
+                ],
+                "label": "0"
+            },
+            "value": 4.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.221592126111548,
+                    0.649958000282253
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.214815183481407,
+                    0.729793684240061
+                ],
+                "label": "0"
+            },
+            "value": 2.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.221592126111548,
+                    0.649958000282253
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.270475616031341,
+                    0.564435580158052
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.66014805077784,
+                    0.321519019950417
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.621081787985343,
+                    0.316969030933393
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.703416181389281,
+                    0.336466076530765
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.66014805077784,
+                    0.321519019950417
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.402972025994758,
+                    0.267467696088657
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.34115623988302,
+                    0.276489726164721
+                ],
+                "label": "0"
+            },
+            "value": 2.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.776641342517741,
+                    0.424508875136764
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.740473112490984,
+                    0.371702248506296
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.366391353004453,
+                    0.771594670035944
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.369092155278882,
+                    0.69067920440565
+                ],
+                "label": "0"
+            },
+            "value": 3.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.366391353004453,
+                    0.771594670035944
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.358066881441739,
+                    0.850367632796484
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.302912892001432,
+                    0.427175413280611
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.33815932078813,
+                    0.454164769184174
+                ],
+                "label": "0"
+            },
+            "value": 5.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.302912892001432,
+                    0.427175413280611
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.330884498257793,
+                    0.378350118413771
+                ],
+                "label": "0"
+            },
+            "value": 3.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.384049937960351,
+                    0.699272394843098
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.369092155278882,
+                    0.69067920440565
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.31458707337144,
+                    0.57138705195825
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.270475616031341,
+                    0.564435580158052
+                ],
+                "label": "0"
+            },
+            "value": 2.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.31458707337144,
+                    0.57138705195825
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.33815932078813,
+                    0.454164769184174
+                ],
+                "label": "0"
+            },
+            "value": 5.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.366391353004453,
+                    0.771594670035944
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.384049937960351,
+                    0.699272394843098
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.31458707337144,
+                    0.57138705195825
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.369092155278882,
+                    0.69067920440565
+                ],
+                "label": "0"
+            },
+            "value": 11.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.521228113411221,
+                    0.372358758312515
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.559626939173142,
+                    0.326993490860323
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.559626939173142,
+                    0.326993490860323
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.621081787985343,
+                    0.316969030933393
+                ],
+                "label": "0"
+            },
+            "value": 2.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.470246591712634,
+                    0.425760568714676
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.521228113411221,
+                    0.372358758312515
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.249019710101979,
+                    0.483055611546797
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.302912892001432,
+                    0.427175413280611
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.249019710101979,
+                    0.483055611546797
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.270475616031341,
+                    0.564435580158052
+                ],
+                "label": "0"
+            },
+            "value": 3.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.502360627259076,
+                    0.288063706127915
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.559626939173142,
+                    0.326993490860323
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.502360627259076,
+                    0.288063706127915
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.402972025994758,
+                    0.267467696088657
+                ],
+                "label": "0"
+            },
+            "value": 5.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.193170441160974,
+                    1.01802043730515
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.232465198283971,
+                    0.999483772440905
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.809893073840273,
+                    0.532653014686772
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.802241858877597,
+                    0.508201629348175
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.802241858877597,
+                    0.508201629348175
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.776641342517741,
+                    0.424508875136764
+                ],
+                "label": "0"
+            },
+            "value": 5.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.437509276534928,
+                    0.61057576168919
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.384049937960351,
+                    0.699272394843098
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.437509276534928,
+                    0.61057576168919
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.459854583085543,
+                    0.501036364339028
+                ],
+                "label": "0"
+            },
+            "value": 4.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.320145754993614,
+                    0.18211996782955
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.325472240196474,
+                    0.220372713221944
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.34115623988302,
+                    0.276489726164721
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.325472240196474,
+                    0.220372713221944
+                ],
+                "label": "0"
+            },
+            "value": 2.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.314112237650609,
+                    1.01912549636067
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.323529159311937,
+                    0.962154492232856
+                ],
+                "label": "0"
+            },
+            "value": 1.0
+        },
+        {
+            "label": "age",
+            "pOrigin": {
+                "description": "d ",
+                "information": [
+                    -0.314112237650609,
+                    1.01912549636067
+                ],
+                "label": "0"
+            },
+            "pTarget": {
+                "description": "d ",
+                "information": [
+                    -0.232465198283971,
+                    0.999483772440905
+                ],
+                "label": "0"
+            },
+            "value": 34.0
+        }
+    ],
+    "node": [
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.232465198283971,
+                0.999483772440905
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.559626939173142,
+                0.326993490860323
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.270475616031341,
+                0.564435580158052
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.323529159311937,
+                0.962154492232856
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.327154031902947,
+                0.327735934228989
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.703416181389281,
+                0.336466076530765
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.358066881441739,
+                0.850367632796484
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.197696190833403,
+                0.882520398366103
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.214815183481407,
+                0.729793684240061
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.389799564644973,
+                0.417095319943081
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.34115623988302,
+                0.276489726164721
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.802241858877597,
+                0.508201629348175
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.621081787985343,
+                0.316969030933393
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.340159741372746,
+                0.936332355582601
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.470246591712634,
+                0.425760568714676
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.369092155278882,
+                0.69067920440565
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.459854583085543,
+                0.501036364339028
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.33815932078813,
+                0.454164769184174
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.402972025994758,
+                0.267467696088657
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.330884498257793,
+                0.378350118413771
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.20125705737247,
+                0.832144461129617
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.740473112490984,
+                0.371702248506296
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.221592126111548,
+                0.649958000282253
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.66014805077784,
+                0.321519019950417
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.325472240196474,
+                0.220372713221944
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.776641342517741,
+                0.424508875136764
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.366391353004453,
+                0.771594670035944
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.302912892001432,
+                0.427175413280611
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.384049937960351,
+                0.699272394843098
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.31458707337144,
+                0.57138705195825
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.521228113411221,
+                0.372358758312515
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.249019710101979,
+                0.483055611546797
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.502360627259076,
+                0.288063706127915
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.193170441160974,
+                1.01802043730515
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.809893073840273,
+                0.532653014686772
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.437509276534928,
+                0.61057576168919
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476190476190477,
+            "information": [
+                -0.320145754993614,
+                0.18211996782955
+            ],
+            "label": "0"
+        },
+        {
+            "description": "d ",
+            "firingCounter": 0.0476209608413921,
+            "information": [
+                -0.314112237650609,
+                1.01912549636067
+            ],
+            "label": "0"
+        }
+    ],
+    "properties": {
+        "aMax": 50.0,
+        "alphaB": 1.05,
+        "alphaT": 0.93,
+        "currentIteration": 1,
+        "eN": 0.06,
+        "eW": 0.02,
+        "firingThreshold": 0.9999,
+        "talB": 3.33,
+        "talN": 14.3
+    }
+}
